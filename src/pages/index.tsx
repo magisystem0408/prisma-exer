@@ -10,6 +10,7 @@ type HomeProps ={
 const Home:FC<HomeProps> =({count})=> {
   return (
     <div className={styles.container}>
+        {count}
     </div>
   )
 }
@@ -19,6 +20,14 @@ export const getServerSideProps: GetServerSideProps<{
     count: number;
 }> = async (ctx) => {
     const count = await clientPrisma.user.count();
+    const allUser = await clientPrisma.user.findMany()
+    const createUser = await clientPrisma.user.create({
+        data:{
+            name: "masato",
+        }
+    })
+    console.log(createUser)
+
     return {
         props: {
             count,

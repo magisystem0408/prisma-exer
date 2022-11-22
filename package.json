@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prisma-dev": "prisma studio",
+    "prisma-dev": "src/prisma studio",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prebuild": "prisma generate",
-    "prisma:migrate": "prisma migrate deploy"
+    "prebuild": "src/prisma generate",
+    "prisma:migrate": "src/prisma migrate deploy"
   },
   "dependencies": {
     "@prisma/client": "^4.6.1",
